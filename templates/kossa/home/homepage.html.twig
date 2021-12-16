@@ -1,0 +1,282 @@
+{% extends 'kossa/base.html.twig' %}
+
+{% set locale = app.request.locale %}
+{% block section %}KOSSA {% endblock %}
+
+{% block title %}{{"Bienvenue"|trans }} {% endblock %}
+{% block description %}{{"Découvrez toute la diversité de la culture musicale camerounaise."|trans }}{% endblock %}
+
+{% block ogtitle %}{{"Plateforme de musique camerounaise"|trans }}{% endblock %}
+{% block ogdescription %}{{"Découvrez toute la diversité de la culture musicale camerounaise."|trans }}{% endblock %}
+
+{% block ogurl %}{{ path('homepage') }}{% endblock %}
+{% block ogimage %}{{ asset('kossa.png') }}{% endblock %}
+
+{% block canonical %}{{ path('homepage') }}{% endblock %}
+
+
+{% block body %}
+    <!-- StartCode-->
+    <div class="cl-b3 one " style="background-image: url({{ asset('kossa/img/enow4.jpg') }});">
+        <div class="position-relative min-vh-100">
+            <div class="two position-absolute h-100 w-100" style="background-image: url({{ asset('kossa/img/micke2.jpeg') }});"></div>
+            <div class="tree position-absolute h-100 w-100"></div>
+            <div class="container p-2">
+                <div class="row">
+                    <div class="col-md-6 col-12 mt-3 mt-md-2 text-center text-md-left ">
+                        <a href="{{ path('homepage') }}" class="">
+                            <span class="d-inline-block animated fadeInLeft ">
+                                <svg version="1.1" id="klogo" x="0px" y="0px"
+                                     viewBox="0 0 1212.3 473" enable-background="new 0 0 1212.3 473" xml:space="preserve">
+                                <g id="logo">
+                                <g>
+                                <g>
+                                <rect x="1002.1" y="77.3" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1002.1" y="143.2" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1002.1" y="209.1" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1002.1" y="275" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1002.1" y="340.9" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1026.6" y="77.3" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1051.1" y="77.3" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1075.7" y="77.3" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1100.2" y="77.3" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1124.7" y="77.3" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1149.2" y="77.3" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1173.7" y="77.3" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1197.2" y="77.3" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1026.6" y="143.2" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1051.1" y="143.2" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1075.7" y="143.2" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1100.2" y="143.2" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1026.6" y="209.1" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1051.1" y="209.1" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1075.7" y="209.1" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1100.2" y="209.1" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1124.7" y="209.1" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1149.2" y="209.1" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1026.6" y="275" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1051.1" y="275" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1026.6" y="340.9" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1051.1" y="340.9" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1075.7" y="340.9" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1100.2" y="340.9" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1125.2" y="340.9" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1150.3" y="340.9" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="1175.3" y="340.9" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                </g>
+                                <g>
+                                <rect x="195.1" y="77.4" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="195.1" y="143.3" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="195.1" y="209.2" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="195.1" y="275.1" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="195.1" y="341" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="170.6" y="77.4" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="146.1" y="77.4" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="121.6" y="77.4" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="97.1" y="77.4" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="72.6" y="77.4" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="48" y="77.4" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="23.5" y="77.4" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="0" y="77.4" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="170.6" y="143.3" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="146.1" y="143.3" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="121.6" y="143.3" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="97.1" y="143.3" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="170.6" y="209.2" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="146.1" y="209.2" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="121.6" y="209.2" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="97.1" y="209.2" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="72.6" y="209.2" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="48" y="209.2" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="170.6" y="275.1" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="146.1" y="275.1" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="170.6" y="341" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="146.1" y="341" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="121.6" y="341" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="97.1" y="341" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="72" y="341" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="47" y="341" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                <rect x="21.9" y="341" fill="#FFFFFF" width="15.1" height="53.4"/>
+                                </g>
+                                <g>
+                                <path fill="#FFFFFF" d="M273.2,124.5H308V219h1.1l39.7-94.5h34.6L339.1,226l49.2,114.9h-37.2l-42.1-102.9H308v102.9h-34.8V124.5z
+                                      "/>
+                                <path fill="#FFFFFF" d="M467.1,342.7c-3.7,0-7.6-0.3-11.9-0.8c-4.3-0.5-8.5-1.7-12.7-3.5c-4.2-1.8-8.3-4.3-12.1-7.5
+                                      c-3.9-3.2-7.3-7.5-10.3-12.9c-3-5.3-5.4-11.9-7.2-19.7c-1.8-7.8-2.7-17.1-2.7-27.9v-76.6c0-10.9,0.9-20.2,2.8-27.9
+                                      c1.8-7.7,4.3-14.2,7.3-19.5c3-5.3,6.5-9.5,10.4-12.6c3.9-3.1,8-5.5,12.2-7.2c4.2-1.6,8.5-2.7,12.7-3.2c4.2-0.5,8.1-0.8,11.7-0.8
+                                      c3.4,0,7.2,0.2,11.3,0.7c4.2,0.5,8.3,1.5,12.5,3c4.2,1.6,8.2,3.9,12.1,7c3.9,3.1,7.4,7.3,10.5,12.5c3,5.3,5.5,11.8,7.3,19.6
+                                      c1.8,7.8,2.8,17.2,2.8,28.3v76.6c0,10.7-0.9,19.9-2.8,27.7c-1.9,7.7-4.3,14.3-7.4,19.6c-3,5.4-6.6,9.7-10.5,12.9
+                                      c-4,3.3-8.1,5.8-12.2,7.6c-4.2,1.8-8.3,3-12.4,3.6C474.1,342.4,470.4,342.7,467.1,342.7z M467.1,318c3.4,0,6.4-0.5,8.9-1.6
+                                      c2.5-1.1,4.7-3,6.3-5.7c1.7-2.7,2.9-6.3,3.8-10.7c0.8-4.4,1.3-10,1.3-16.8v-98.4c0-6.9-0.4-12.7-1.3-17.3
+                                      c-0.9-4.6-2.1-8.4-3.8-11.2c-1.7-2.8-3.8-4.8-6.3-6c-2.5-1.2-5.5-1.8-8.9-1.8c-3.5,0-6.5,0.6-9.1,1.8c-2.6,1.2-4.7,3.2-6.4,6
+                                      c-1.7,2.8-3,6.6-3.8,11.2c-0.9,4.6-1.3,10.4-1.3,17.3v98.4c0,6.8,0.4,12.3,1.3,16.8c0.8,4.4,2.1,8,3.8,10.7
+                                      c1.7,2.7,3.8,4.6,6.4,5.7C460.5,317.5,463.6,318,467.1,318z"/>
+                                <path fill="#FFFFFF" d="M555.8,297c0-4.6,0.3-8.9,0.9-12.9c0.6-3.9,1.5-8.2,2.6-12.7h27v10.5c0,5.8,0.4,11,1.1,15.4
+                                      c0.8,4.5,2,8.3,3.8,11.3c1.7,3.1,4.1,5.4,7,7c2.9,1.6,6.5,2.3,10.7,2.3c6.6,0,11.7-1.7,15.2-5.1c3.5-3.4,5.2-8.4,5.2-15
+                                      c0-3.4-0.2-6.5-0.7-9.3c-0.5-2.8-1.3-5.6-2.5-8.4c-1.2-2.8-2.8-5.7-4.9-8.8c-2.1-3.1-4.7-6.5-7.9-10.3l-36.2-40.6
+                                      c-6.4-7.8-11.4-15.6-14.9-23.5c-3.5-7.9-5.2-16.3-5.2-25.3c0-7.2,1.2-13.8,3.6-19.8c2.4-6,5.8-11.2,10.3-15.5
+                                      c4.5-4.3,10-7.7,16.6-10.1c6.6-2.4,14-3.6,22.3-3.6c10.1,0,18.5,1.4,25.3,4.1c6.8,2.7,12.1,6.2,16.2,10.6c4,4.4,6.9,9.3,8.5,14.8
+                                      c1.7,5.4,2.5,10.9,2.5,16.4c0,4.6-0.4,8.9-1.1,12.9c-0.8,3.9-1.6,8.3-2.6,13h-26.8v-10.3c0-11.5-1.7-20.3-5.2-26.4
+                                      c-3.5-6.1-9.2-9.2-17-9.2c-6.5,0-11.4,1.7-14.6,5.1c-3.2,3.4-4.8,8-4.8,13.7c0,3,0.2,5.8,0.7,8.2c0.5,2.4,1.2,4.7,2.1,6.8
+                                      c0.9,2.1,2.1,4.1,3.4,6c1.3,1.9,2.9,4,4.6,6.1l40.4,46.1c7.3,9,13,17.7,16.9,26c3.9,8.3,5.9,17.1,5.9,26.4
+                                      c0,7.7-1.3,14.6-3.8,20.8c-2.5,6.2-6.2,11.4-10.9,15.7c-4.7,4.3-10.5,7.6-17.2,9.9c-6.7,2.3-14.3,3.5-22.7,3.5
+                                      c-10.4,0-19-1.3-25.8-3.9c-6.8-2.6-12.3-6.1-16.4-10.4c-4.1-4.3-6.9-9.2-8.6-14.7C556.6,308.4,555.8,302.8,555.8,297z"/>
+                                <path fill="#FFFFFF" d="M692.4,297c0-4.6,0.3-8.9,0.9-12.9c0.6-3.9,1.5-8.2,2.6-12.7h27v10.5c0,5.8,0.4,11,1.1,15.4
+                                      c0.8,4.5,2,8.3,3.8,11.3c1.7,3.1,4.1,5.4,7,7c2.9,1.6,6.5,2.3,10.7,2.3c6.6,0,11.7-1.7,15.2-5.1c3.5-3.4,5.2-8.4,5.2-15
+                                      c0-3.4-0.2-6.5-0.7-9.3c-0.5-2.8-1.3-5.6-2.5-8.4c-1.2-2.8-2.8-5.7-4.9-8.8c-2.1-3.1-4.7-6.5-7.9-10.3l-36.2-40.6
+                                      c-6.4-7.8-11.4-15.6-14.9-23.5c-3.5-7.9-5.2-16.3-5.2-25.3c0-7.2,1.2-13.8,3.6-19.8c2.4-6,5.8-11.2,10.3-15.5
+                                      c4.5-4.3,10-7.7,16.6-10.1c6.6-2.4,14-3.6,22.3-3.6c10.1,0,18.5,1.4,25.3,4.1c6.8,2.7,12.1,6.2,16.2,10.6c4,4.4,6.9,9.3,8.5,14.8
+                                      c1.7,5.4,2.5,10.9,2.5,16.4c0,4.6-0.4,8.9-1.1,12.9c-0.8,3.9-1.6,8.3-2.6,13h-26.8v-10.3c0-11.5-1.7-20.3-5.2-26.4
+                                      c-3.5-6.1-9.2-9.2-17-9.2c-6.5,0-11.4,1.7-14.6,5.1c-3.2,3.4-4.8,8-4.8,13.7c0,3,0.2,5.8,0.7,8.2c0.5,2.4,1.2,4.7,2.1,6.8
+                                      c0.9,2.1,2.1,4.1,3.4,6c1.3,1.9,2.9,4,4.6,6.1l40.4,46.1c7.3,9,13,17.7,16.9,26c3.9,8.3,5.9,17.1,5.9,26.4
+                                      c0,7.7-1.3,14.6-3.8,20.8c-2.5,6.2-6.2,11.4-10.9,15.7c-4.7,4.3-10.5,7.6-17.2,9.9c-6.7,2.3-14.3,3.5-22.7,3.5
+                                      c-10.4,0-19-1.3-25.8-3.9c-6.8-2.6-12.3-6.1-16.4-10.4c-4.1-4.3-6.9-9.2-8.6-14.7C693.2,308.4,692.4,302.8,692.4,297z"/>
+                                <path fill="#FFFFFF" d="M863,124.5h40l42.4,216.3h-35.2l-6.3-38.7H862l-6,38.7h-35.3L863,124.5z M899.9,277.4l-16.1-107.8h-1.5
+                                      l-16.2,107.8H899.9z"/>
+                                </g>
+                                <path fill="none" stroke="#FFFFFF" stroke-width="11.1854" stroke-miterlimit="10" d="M989.4,435.5H223c-0.1,0-0.2-0.1-0.2-0.2
+                                      V36.5c0-0.1,0.1-0.2,0.2-0.2h766.4c0.1,0,0.2,0.1,0.2,0.2v398.8C989.6,435.4,989.5,435.5,989.4,435.5z"/>
+                                </g>
+
+                                <line fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-miterlimit="10" x1="447.9" y1="4" x2="764.5" y2="4"/>
+
+                                <line fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-miterlimit="10" x1="447.9" y1="469" x2="764.5" y2="469"/>
+                                </g>
+                                </svg>
+                        </a>
+                        </span>
+                    </div>
+                    <div class="col-md-6 col-12 mt-3 mt-sm-3 mt-md-0 d-flex justify-content-center justify-md-content-end align-items-center">
+                        <div class="text-center "> 
+                            {% if not app.user %}
+                                <a href="{{ path('security_register') }}" class="btn btn-primary p-2 pl-3 pr-3 font-weight-bold ls3 text-capitalize">Inscription </a>
+                                <a href="{{ path('security_login') }}" class="btn btn-danger p-2 pl-3 pr-3 font-weight-bold ls3 text-capitalize">Connexion </a>
+                            {% endif %}
+
+                            {% if app.request.locale == 'fr' %}
+                                <a href="{{ path(app.request.get('_route', 'homepage'), app.request.get('_route_params', [])|merge({_locale: 'en'}),app.session.set('_locale','fr')) }}" class="btn btn-lng p-1 font-weight-bold ls3 text-capitalize">English</a></span>
+                            {% else %}
+                                <a href="{{ path(app.request.get('_route', 'homepage'), app.request.get('_route_params', [])|merge({_locale: 'fr'}),app.session.set('_locale','en')) }}" class="btn btn-lng p-1 font-weight-bold ls3 text-capitalize">Français</a></span>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                </div>
+
+
+                {% for label, messages in app.flashes %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ label }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+
+
+
+                <div class="row">
+                    <div class="col-12 text-center pt-4">
+                        <div>
+                            <span ><img src="{{ asset('kossa/img/kossa.png') }}" id="mascot" alt="" class="animated flipInY c15s slow"></span>
+                        </div>
+                    </div>
+                    <div class="col-12 text-center pt-3">
+                        <h2 class="font-weight-bold text-white h1-responsive">Découvrez toute la diversité de la culture musicale camerounaise. </h2>
+                    </div>
+                    <div class="col-12 text-center pt-1 animated flipInX c05s animated.slower">
+                        <div class="h3-responsive">Un déluge de plaisir sonore africain. </div>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-12 h6-responsive mb-5 text-center font-weight-bold"><span class="cl-n2 bg-white d-inline-block p-2 pl-3 pr-3" >Visitez nos plateformes kossa</span></div>
+                    <div class=" col-4 ">
+                        <div class="kplatform mb-2">
+                            <a href="{{ path('kossa_news_index') }}"  >
+                                <svg version="1.1" class="animated fadeInLeft c05s" id="knews" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 2759.4 931.2" enable-background="new 0 0 2759.4 931.2" xml:space="preserve">
+                                <path d="M377.7,435.7c0,13,0.5,30.8,2.4,54.5L185.4,50.7L36,51.6c0,284.8,0,563.8,0,848.7
+                                      c41-16.9,61.7-24.6,103.6-40.5l1-532c0-4.3-0.5-29.9-0.5-29.9l223.1,491.6c46.3-14.5,69.9-20.7,116.6-33.3
+                                      c1.9-237.1,3.9-474.7,6.3-711.8l-105.1,2.4L377.7,435.7z"/>
+                                <path d="M1157.4,151.9c0-46.3,0-68.9-0.5-112.3c-141.2,0-282.4,0-423.6,1c-1,219.8-1.9,439-2.9,659.3
+                                      c142.2-25.5,283.9-42.4,427-52.5c0-45.3,0-68.9,0-116.6c-94.9,4.8-190.4,10.6-284.8,24.1c0-55.4,0-83.9,0-141.7
+                                      c74.7-7.2,149.4-11.6,224.1-14.9c0-47.2,0-71.3,0-118.6c-74.2,2.4-149.4,6.3-223.6,9.6c0-53.5,0-80.5,0-132.5
+                                      C967.6,156.2,1062.5,152.8,1157.4,151.9z"/>
+                                <path d="M1895.7,433.3c-3.9,18.8-6.7,32.3-8.7,40.5c-31.8-145.5-64.1-290.6-100.7-435.2c-53,0-79,0-131.6,0
+                                      c-34.2,136.9-65.1,274.2-96.9,411.6c-1.9-8.7-3.9-14.9-4.8-19.3c-2.9-11.6-4.3-18.3-4.8-20.2c-27-123.9-54.9-248.2-84.3-372
+                                      c-57.3,0-85.3,0-142.6,0c54,201,101.7,403.4,156.1,603.8c55.4,1.9,82.4,3.9,137.3,7.2c33.7-134.5,63.1-268.9,94-403.8
+                                      c33.3,141.2,65.5,281.9,99.8,423.1c55.4,7.2,82.4,11.1,137.3,20.7c54.9-214.9,92.5-433.7,139.3-650.1c-42.9,0-64.1,0-108.4-1
+                                      C1948.7,170.2,1922.7,301.7,1895.7,433.3z"/>
+                                <path d="M2698.6,503.2c-1-3.9-3.4-8.2-5.3-11.6c-50.6-94.5-134-142.6-231.3-181.2c-35.7-14-58.8-28.4-69.4-42.4
+                                      c-41.9-57.8-3.9-117.6,62.6-115.2c51.6,1.4,87.2,32.3,105.1,101.7c47.7-19.8,72.3-29.4,124.3-49.6
+                                      c-28.4-118.1-122.4-174.5-239.5-174c-65.5,0.5-114.7,16.4-149.4,55.4c-47.7,53-62.2,134.5-45.8,202.9
+                                      c17.8,75.2,69.9,113.3,135.9,143.1c35.2,15.9,69.4,34.2,100.7,57.3c33.7,25.1,63.6,49.2,79,88.7c25.5,66.5,1.4,143.1-81.9,130.1
+                                      c-45.3-6.7-85.3-35.2-108.4-74.7c-3.4-5.8-27.5-55.4-26.5-55.4l-123.9-1.9c10.1,49.6,41,120.5,86.7,163.4
+                                      c43.9,41.4,107.9,69.4,168.7,81c38.6,6.7,64.1,9.6,117.6-7.2c17.8-6.3,32.8-16.9,47.7-28c46.3-33.3,68.9-72.8,76.1-130.1
+                                      C2728,602.9,2715,551.4,2698.6,503.2z"/>
+                                </svg>
+                            </a>  
+                        </div>
+                    </div>
+                    <div class="col-4 ">
+                        <div class="kplatform mb-2">
+                            <a href="{{ path('kossa_play_index') }}" >
+                                <svg version="1.1" class="animated fadeInLeft c1s" id="kplay" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 2745.8 969.1" enable-background="new 0 0 2745.8 969.1" xml:space="preserve">
+                                <path d="M446.2,41.7c-32.3-13-78.1-19.3-138.3-19.3H38v923.4h4.8c44.3-33.7,97.3-64.6,158.1-92.5V451.8h112.8
+                                      c48.7,0,84.8-2.9,107.5-8.7c22.7-6.3,46.7-18.3,71.3-37.1c24.6-18.3,43.4-43.9,56.9-76.1c13.5-32.3,19.8-65.1,19.8-98.8
+                                      c1-46.7-11.6-87.7-37.1-120.5S478.5,54.7,446.2,41.7z M384.5,300.9c-15.9,18.3-43.9,27.5-83.4,27.5H196.5V147.2h104.1
+                                      c36.1,0,63.6,8.2,81.4,24.6c17.8,16.4,26.5,38.6,26.5,66.5C408.1,260.9,400.9,282.1,384.5,300.9z"/>
+                                <path d="M906.9,22.4H744.5v686.7c134.9-20.2,281.4-33.3,434.7-37.6v-121l-272.3,20.7V22.4z"/>
+                                <path d="M1786.4,22.4h-185.5l-174,543.6l-34.7,107.9c46.7,1.9,92.5,4.8,137.8,8.2l35.7-115.7l227.9,34.2l37.1,118.6
+                                      c65.5,11.6,128.2,24.6,187.5,39.5L1956,566L1786.4,22.4z M1602.8,439.3l73.3-240.5l85.8,260.7L1602.8,439.3z"/>
+                                <path d="M2558.4,22.9l-136.9,259.3L2283.7,22.9H2118l214.9,396.6v436.1c60.2,27.5,112.8,58.3,156.6,91.1h3.4V453.2
+                                      l214.9-430.8L2558.4,22.9z"/>
+                                </svg>
+                            </a>  
+                        </div>
+                    </div>
+                    <div class=" col-4">
+                        <div class="kplatform mb-2">
+                            <a href="{{ path('kossa_event_index') }}">
+                                <svg version="1.1"  class="animated fadeInLeft c15s" id="kevent" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="35.8 1009.9 2660.4 712.3" enable-background="new 35.8 1009.9 2660.4 712.3" xml:space="preserve">
+                                <path d="M35.8,1722.1h10.7c97.7-45.4,221.3-85,365.9-117.3v-150.9l-251.1,52.7v-146.5h197.4v-125.6H161.4v-113.3
+                                      h251.1v-110.4H35.8V1722.1z"/>
+                                <path d="M783.1,1387.9l-105.5-377.1H546.3L698.2,1516l0.5,1v0.5l6.4,20.5l5.4,15.6c41.1-5.4,83.5-9.7,126-14.2
+                                      l0.5-1.4l7.3-22l152.4-505.1h-104L783.1,1387.9z"/>
+                                <polygon points="1162.8,1537.5 1539.4,1537.5 1539.4,1433.4 1288.4,1433.4 1288.4,1318.1 1485.6,1318.1 1485.6,1219 
+                                         1288.4,1219 1288.4,1111 1539.4,1111 1539.4,1010.9 1162.8,1010.9 "/>
+                                <path d="M2043.5,1286.9c0,8.3,0.5,20.1,1.9,35.2l-179.3-311.2h-133.4V1535c11.3,1,22.5,1.9,33.8,2.9
+                                      c21,1.9,41.6,4.4,62,6.4v-321.5c0-6.4-0.5-13.7-1.4-22.5c-0.5-3.4-0.5-9.3-1-18l203.7,350.7h-1l25.4,42.5
+                                      c28.4,4.4,61.5,9.7,88.9,15.1v-579.8l-99.6,0.5V1286.9L2043.5,1286.9z"/>
+                                <path d="M2695.7,1009.9h-386.9v104.5h131.4v556.4c45.4,15.1,87,31.2,125.1,48.9v-604.2h131v-104.5L2695.7,1009.9z"/>
+                                </svg>
+                            </a>  
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-12 text-center mb-3 font-weight-bold fs-13">Partagez sur</div>
+                    <div class="col-12 text-center animated fadeInDown c05s context-menu pb-4">
+                        <!--facebook-->
+                        <a  href="" class="btn-social fb-ic mr-3" role="button"><i class="fab fa-lg fa-facebook-f"></i></a>
+                        <!--twitter-->
+                        <a href="" class="btn-social tw-ic mr-3" role="button"><i class="fab fa-lg fa-twitter"></i></a>
+                        <!--google-->
+                        <a href="" class="btn-social gplus-ic mr-3" role="button"><i class="fab fa-lg fa-google-plus-g"></i></a>
+                        <!--Linkedin-->
+                        <a href="" class="btn-social li-ic mr-3" role="button"><i class="fab fa-lg fa-linkedin-in"></i></a>
+                        <!--messanger-->
+                        <a href="" class="btn-social li-ic mr-3" role="button"><i class="fab fa-lg  fa-facebook-messenger"></i></a>
+                        <!--Instagram-->
+                        <a href="" class="btn-social ins-ic mr-3" role="button"><i class="fab fa-lg fa-instagram"></i></a>
+                        <!--Comments-->
+                        <a href="" class="btn-social comm-ic mr-3" role="button"><i class="fas fa-lg fa-comments"></i></a>
+                        <!--Email-->
+                        <a href="" class="btn-social email-ic" role="button"><i class="far fa-lg fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

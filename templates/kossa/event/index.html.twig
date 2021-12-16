@@ -1,0 +1,93 @@
+{% extends 'kossa/event/base.html.twig' %}
+{% set locale = app.request.locale %}
+{% block banner %}     
+    <div class="cl-b3 one brd-bt-event pt-5 mb-3" style="background-image: url({{ asset('kossa/img/event.jpg') }});">
+        <div class="position-relative">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-12 intro-size mt-5 ml-3 mr-3">
+                        <div class="font-weight-bold intro-presentation-event ">Vouci les ways de l'heure! </div>
+                    </div>
+                    <div class="col-12 pt-4 animated flipInX c05s ml-3 mr-3">
+                        <div class="h3-responsive intro-presentation-event font-weight-light ">Oui! oui! plus aucun evenement ne vous loupera. </div>
+                    </div>
+                </div>
+
+                <div class="row text-right mt-5 mb-4 " >
+                    <div class="col-12 text-right mb-3 font-weight-bold fs-13 ">Partagez cette page sur</div>
+                    <div class="col-12 text-right animated fadeInDown c05s mb-4">
+                        <!--facebook-->
+                        <a  href="" class="btn-social fb-ic mr-3" role="button"><i class="fab fa-lg fa-facebook-f"></i></a>
+                        <!--twitter-->
+                        <a href="" class="btn-social tw-ic mr-3" role="button"><i class="fab fa-lg fa-twitter"></i></a>
+                        <!--google-->
+                        <a href="" class="btn-social gplus-ic mr-3" role="button"><i class="fab fa-lg fa-google-plus-g"></i></a>
+                        <!--Linkedin-->
+                        <a href="" class="btn-social li-ic mr-3" role="button"><i class="fab fa-lg fa-linkedin-in"></i></a>
+                        <!--messanger-->
+                        <a href="" class="btn-social li-ic mr-3" role="button"><i class="fab fa-lg  fa-facebook-messenger"></i></a>
+                        <!--Instagram-->
+                        <a href="" class="btn-social ins-ic mr-3" role="button"><i class="fab fa-lg fa-instagram"></i></a>
+                        <!--Email-->
+                        <a href="" class="btn-social email-ic" role="button"><i class="far fa-lg fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block  content_body %}
+    {% set query = "empty" %}
+    {% set type = "empty" %}
+
+    {% if app.request.query.get('category')==null and app.request.query.get('query')==null and app.request.query.get('tag')==null %}
+
+        <div class="h3-responsive float-left font-weight-bold mt-1 mb-2 mb-md-0">
+            Kossa Event: lets move
+        </div>
+    {% elseif app.request.query.get('category') %}
+        {% set query = app.request.query.get('category') %}
+        {% set type = "categorie" %}
+
+        <div class="h5-responsive float-left font-weight-bold mt-1 mb-2 mb-md-0">
+            Nous avons trouvé {{event_lenght}} évènement(s) dans la categorie "{{app.request.query.get('category')}}".
+        </div>
+    {% elseif app.request.query.get('tag') %}
+        {% set query = app.request.query.get('tag') %}
+        {% set type = "tag" %}
+
+        <div class="h5-responsive float-left font-weight-bold mt-1 mb-2 mb-md-0">
+            Le mot clé "{{app.request.query.get('tag')}}" a retourné {{event_lenght}}  évènement(s). 
+        </div>
+    {% elseif app.request.query.get('query') %}
+        {% set query = app.request.query.get('query') %}
+        {% set type = "query" %}
+
+        <div class="h5-responsive float-left font-weight-bold mt-1 mb-2 mb-md-0">
+            La recherche de "{{app.request.query.get('query')}}" a retourné {{event_lenght}} évènement(s).
+        </div>
+    {% endif %}
+
+    <div class="text-right  mb-4">
+        <div class="">
+            <span class="btn position-relative btn-danger btn-sm p-1 pl-3 pr-3 font-weight-bold btn-cate">Catégorie: <span class="chx-cate">#Toutes</span>
+                <div class="position-absolute d-none btn-danger p-0 w-100 text-left lst-elm-cate z-depth-2 animated " style="top:99%; left:0px">
+                    {% for category in categories %}
+                        <a style="color: white"  href="{{ path('kossa_event_index', {'category': category.nom == app.request.query.get('category') ? null : category.nom}) }}"><div class="p-1 pl-3 pr-3 font-weight-bold fs-12 text-uppercase ls3 elm-cate">#{{category.nom}}</div></a>
+                    {% endfor %}
+                </div>
+            </span>
+
+        </div>
+    </div>
+    <div id="kossa_event_events"> </div>
+
+    <script>
+                   locale = "{{locale}}";
+                   kossa_event_type = "{{type}}";
+                   kossa_event_query = "{{query}}";
+                   accueil = {{accueil}};
+    </script>
+{% endblock %}
+

@@ -1,0 +1,63 @@
+{% extends 'kossa/event/index.html.twig' %}
+
+{% set locale = app.request.locale %}
+
+{% set title = null %}
+{% set description = null %}
+{% set ogtitle = null %}
+{% set ogdescription = null %}
+{% set url = app.request.locale %}
+{% set imageurl = asset('kossa.png') %}
+
+{%if query=='concert' %}
+    {% set title = 'Concerts'|trans %}
+    {% set description = 'Soyez au taquet tous les concerts'|trans  %}
+    {% set ogtitle = 'KOSSA EVENT | Concerts'|trans %}
+    {% set ogdescription = 'Soyez au taquet tous les concerts'|trans  %}
+    {% set url = path('kossa_event_concert') %}
+    {% set imageurl = asset('kossa.png')  %}
+{% elseif query=='festival' %}
+    {% set title = "Festival"|trans  %}
+    {% set description = "Soyez au taquet tous les festivals"|trans  %}
+    {% set ogtitle = "KOSSA EVENT | Festivals"|trans  %}
+    {% set ogdescription = "Soyez au taquet tous les festivals"|trans  %}
+    {% set url =  path('kossa_event_festival')  %}
+
+{% elseif query=='showcase' %}
+    {% set title = "Showcases"|trans  %}
+    {% set description = "Soyez au taquet tous les showcases"|trans  %}
+    {% set ogtitle = "KOSSA EVENT | Showcases"|trans  %}
+    {% set ogdescription = "Soyez au taquet tous les showcases"|trans  %}
+    {% set url =  path('kossa_event_showcase')  %}
+
+{% elseif query=='award' %}
+    {% set title = "Awards"|trans  %}
+    {% set description = "Soyez au taquet tous les awards"|trans  %}
+    {% set ogtitle = "KOSSA EVENT | Awards"|trans  %}
+    {% set ogdescription = "Soyez au taquet tous les awards"|trans  %}
+    {% set url =  path('kossa_event_award')  %}
+{% endif %}
+
+{% block title %}{{title}} {% endblock %}
+{% block description %}{{description}}{% endblock %}
+{% block ogtitle %}{{ogtitle}}{% endblock %}
+{% block ogdescription %}{{ogdescription}}{% endblock %}
+{% block ogurl %}{{url}}{% endblock %}
+{% block ogimage %}{{imageurl}}{% endblock %}
+{% block canonical %}{{url}}{% endblock %}
+
+
+{% block  content_body %}
+
+    <div id="kossa_event_events"> </div>
+
+    {% block javascripts %}
+        <script>
+            locale = "{{locale}}";
+            kossa_event_type = "categorie";
+            kossa_event_query = "{{query}}";
+            accueil = {{accueil}};
+        </script>
+    {% endblock %}
+{% endblock %}
+

@@ -1,0 +1,289 @@
+{% extends 'kossa/play/base.html.twig' %}
+
+{% set locale = app.request.locale %}
+
+
+
+{% block banner %}
+    <div class="cl-b3 one brd-bt-play pt-5 mb-3" style="background-image: url({{ asset('kossa/img/artist.jpg')}});">
+        <div class="position-relative">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-12 intro-size mt-5 ml-3 mr-3">
+                        <div class="font-weight-bold intro-presentation-play ">On a ya, écouter et chanter maintenant on danse. </div>
+                    </div>
+                    <div class="col-12 pt-4 animated flipInX c05s animated.slower ml-3 mr-3">
+                        <div class="h3-responsive intro-presentation-play font-weight-light">Venez vibrer sur les mélodies des plus belle chanson camerounaise <br>de tout genre. </div>
+                    </div>
+                </div>
+                <div class="row text-right mt-5 mb-4 " >
+                    <div class="col-12 text-right mb-3 font-weight-bold fs-13 ">Partagez cette page sur</div>
+                    <div class="col-12 text-right animated fadeInDown c05s mb-4">
+                        <!--facebook-->
+                        <a  href="" class="btn-social fb-ic mr-3" role="button"><i class="fab fa-lg fa-facebook-f"></i></a>
+                        <!--twitter-->
+                        <a href="" class="btn-social tw-ic mr-3" role="button"><i class="fab fa-lg fa-twitter"></i></a>
+                        <!--google-->
+                        <a href="" class="btn-social gplus-ic mr-3" role="button"><i class="fab fa-lg fa-google-plus-g"></i></a>
+                        <!--Linkedin-->
+                        <a href="" class="btn-social li-ic mr-3" role="button"><i class="fab fa-lg fa-linkedin-in"></i></a>
+                        <!--messanger-->
+                        <a href="" class="btn-social li-ic mr-3" role="button"><i class="fab fa-lg  fa-facebook-messenger"></i></a>
+                        <!--Instagram-->
+                        <a href="" class="btn-social ins-ic mr-3" role="button"><i class="fab fa-lg fa-instagram"></i></a>
+                        <!--Email-->
+                        <a href="" class="btn-social email-ic" role="button"><i class="far fa-lg fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block  content_body %}
+    <div class="h3-responsive float-left font-weight-bold mt-1 mb-2 mb-md-0">Kossa play: music</div>
+    <div class="text-right  mb-4">
+        <div class="">
+            <span type="button" class="btn position-relative btn-danger btn-sm p-1 pl-3 pr-3 font-weight-bold btn-cate">Genre: <span class="chx-cate">#Tout</span>
+                <div class="position-absolute d-none btn-danger p-0 w-100 text-left lst-elm-cate z-depth-2 animated " style="top:99%; left:0px">
+                    <div class="p-1 pl-3 pr-3 font-weight-bold fs-12 text-uppercase ls3 elm-cate">#Makossa</div>
+                    <div class="p-1 pl-3 pr-3 font-weight-bold fs-12 text-uppercase ls3 elm-cate">#Bikoutsi</div>
+                    <div class="p-1 pl-3 pr-3 font-weight-bold fs-12 text-uppercase ls3 elm-cate">#Hiphop</div>
+                    <div class="p-1 pl-3 pr-3 font-weight-bold fs-12 text-uppercase ls3 elm-cate">#Mix</div>
+                </div>
+            </span>
+
+        </div>
+    </div>
+    <div class="mb-4">
+        <div class="p-3 white  toile-content">
+            <span class="text-md-left d-inline-block ls3 h5-responsive font-weight-bold">Ma Playlist</span>
+            <span class="float-right"> <a href="" class="font-weight-bold  fs-12 btn-sm tt">Afficher tout</a></span>
+        </div>
+        <div class="pl-4 pt-4 pr-4 pb-3 white toile-content  position-relative">
+            <div class="play-playlist">
+                <div class="d-inline-block mb-3 ml-3" >
+                    <div class="weight-mus">
+                        <div class="mb-2">
+                            <span class="float-left d-inline-block badge indigo ls3 pl-2 pr-2 ">Video</span>
+                            <span class="float-right fs-13 ls3">
+                                <div class="mr-2 d-inline-block position-relative  " >
+                                    <i class="fas fa-heart fs-18 text-red tolltip-cnt cur-pointer" data-ttle="J'aime"></i>
+                                    <div class="position-absolute zit p-2 tolltip ls3 d-none "></div>
+                                </div><div class="d-inline-block position-relative ret-plst">
+                                    <i class="fa fa-trash fs-13 tt tolltip-cnt cur-pointer" data-ttle="Rétirer de la playlist"></i>
+                                    <div class="position-absolute zit p-2 tolltip ls3 d-none "></div>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="a-play-cont position-relative d-inline-block">
+                            <div class="position-absolute tp-lf0 h-100 w-100 hov-elm"></div>
+                            <div class="content-mus weight-mus toile-content position-relative ovh" style="background-image: url({{ asset('kossa/img/enow2.jpg') }})">
+                                <div class="position-absolute couv tp-lf0 h-100 w-100"></div>
+                                <div class="position-absolute tp-lf0 h-100 w-100 text-center">
+                                    <div class="position-relative time-play" style="top:100px">
+                                        <div class="text-center">
+                                            <a href="video.html" class="d-inline-block btn-in-img tt cur-pointer cl-n2 p-3 z-depth-1 mr-1"  data-toggle="tooltip" data-placement="top" title="Play"> <i class="fa fa-play "></i></a><a href="detsingle.html" class="d-inline-block btn-in-img tt cl-n2 p-3 ml-1 z-depth-1" data-toggle="tooltip" data-placement="top" title="Détails"> <i class="fa fa-ellipsis-h "></i></a>
+                                        </div>
+                                        <div class="text-center d-inline-block mt-2 pr-2 pl-2 ls3 black cl-b3 fs-13 cur-def">03:33</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-1 name-mus weight-mus"><span class="font-weight-bold name-art">Stanley enow </span>- <span class="">Dans la ville des héé-père</span></div>  
+                        </div>
+                    </div>
+                </div>
+                <div class="d-inline-block mb-3 ml-3" >
+                    <div class="weight-mus">
+                        <div class="mb-2">
+                            <span class=" float-left d-inline-block badge indigo ls3 pl-2 pr-2 ">Video</span>
+                            <span class="float-right fs-13 ls3">
+                                <div class="mr-2 d-inline-block position-relative  " >
+                                    <i class="far fa-heart fs-18 tt tolltip-cnt cur-pointer" data-ttle="J'aime"></i>
+                                    <div class="position-absolute zit p-2 tolltip ls3 d-none "></div>
+                                </div><div class="d-inline-block  cur-pointer position-relative" data-toggle="tooltip" data-placement="bottom" title="ajouter à la playlist">
+                                    <div class=" btn-plst p-0"> <i class="fa fa-plus "></i></div>
+                                    <div class="position-absolute p-2 z-depth-1 white p-lst d-none cont-plst animated"  alb-sng="Le single" style="right:0px;">
+
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="a-play-cont position-relative d-inline-block">
+                            <div class="position-absolute tp-lf0 h-100 w-100 hov-elm"></div>
+                            <div class="content-mus weight-mus toile-content position-relative ovh" style="background-image: url({{ asset('kossa/img/daf.jpg') }})">
+                                <div class="position-absolute couv tp-lf0 h-100 w-100"></div>
+                                <div class="position-absolute tp-lf0 h-100 w-100 text-center">
+                                    <div class="position-relative time-play" style="top:100px">
+                                        <div class="text-center">
+                                            <a href="video.html" class="d-inline-block btn-in-img tt cur-pointer cl-n2 p-3 z-depth-1 mr-1"  data-toggle="tooltip" data-placement="top" title="Play"> <i class="fa fa-play "></i></a><a href="detsingle.html" class="d-inline-block btn-in-img tt cl-n2 p-3 ml-1 z-depth-1" data-toggle="tooltip" data-placement="top" title="Détails"> <i class="fa fa-ellipsis-h "></i></a>
+                                        </div>
+                                        <div class="text-center d-inline-block mt-2 pr-2 pl-2 ls3 black cl-b3 fs-13 cur-def">03:33</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-1 name-mus weight-mus"><span class="font-weight-bold name-art">Dafne </span>- <span class="">La magie du titre de la vidéo</span></div>  
+                        </div>
+                    </div>
+                </div>
+                <div class="d-inline-block mb-3 ml-3" >
+                    <div class="weight-mus">
+                        <div class="mb-2">
+                            <span class=" float-left d-inline-block badge black ls3 pl-2 pr-2 ">Audio</span>
+                            <span class="float-right fs-13 ls3">
+                                <div class="mr-2 d-inline-block position-relative  " >
+                                    <i class="far fa-heart fs-18 tt tolltip-cnt cur-pointer" data-ttle="J'aime"></i>
+                                    <div class="position-absolute zit p-2 tolltip ls3 d-none "></div>
+                                </div><div class="d-inline-block  cur-pointer position-relative" data-toggle="tooltip" data-placement="bottom" title="ajouter à la playlist">
+                                    <div class=" btn-plst p-0"> <i class="fa fa-plus "></i></div>
+                                    <div class="position-absolute p-2 z-depth-1 white p-lst d-none cont-plst animated"  alb-sng="Le single" style="right:0px;">
+
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="a-play-cont position-relative d-inline-block">
+                            <div class="position-absolute tp-lf0 h-100 w-100 hov-elm"></div>
+                            <div class="content-mus weight-mus toile-content position-relative ovh" style="background-image: url({{ asset('kossa/img/nabila.jpg') }})">
+                                <div class="position-absolute couv tp-lf0 h-100 w-100"></div>
+                                <div class="position-absolute tp-lf0 h-100 w-100 text-center">
+                                    <div class="position-relative time-play" style="top:100px">
+                                        <div class="text-center">
+                                            <div class="d-inline-block btn-in-img tt cur-pointer bnt-plyay-mus cl-n2 p-3 z-depth-1 mr-1"  data-toggle="tooltip" data-placement="top" title="Play"> <i class="fa fa-play "></i></div><a href="detsingle.html" class="d-inline-block btn-in-img tt cl-n2 p-3 ml-1 z-depth-1" data-toggle="tooltip" data-placement="top" title="Détails"> <i class="fa fa-ellipsis-h "></i></a>
+                                        </div>
+                                        <div class="text-center d-inline-block mt-2 pr-2 pl-2 ls3 black cl-b3 fs-13 cur-def">03:33</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-1 name-mus weight-mus"><span class="font-weight-bold name-art">Nabila </span>- <span class="">Une autre magie du name</span></div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="prev-playlist position-absolute drt-sld white pl-3 pr-3 pt-1 pb-1 trs-03 d-inline-block cur-pointer z-depth-1" style="top:45%;left:0%">
+                <i class="fa fa-arrow-left fs-13 "></i>
+            </div>
+            <div class="next-playlist position-absolute drt-sld white pl-3 pr-3 pt-1 pb-1 trs-03 d-inline-block cur-pointer z-depth-1" style="top:45%;right:0%">
+                <i class="fa fa-arrow-right fs-13 "></i>
+            </div>
+
+        </div>
+    </div>
+    <div class="mb-4">
+        <div class="p-3 white  toile-content">
+            <span class="text-md-left d-inline-block ls3 h5-responsive font-weight-bold">Makossa</span>
+            <span class="float-right"> <a href="" class="font-weight-bold  fs-12 btn-sm tt">Afficher tout</a></span>
+        </div>
+        <div class="pl-4 pt-4 pr-4 pb-3 white toile-content position-relative">
+            <div class="play-makossa">
+                <div class="d-inline-block mb-3 ml-3" >
+                    <div class="weight-mus">
+                        <div class="mb-2">
+                            <span class="float-left d-inline-block badge indigo ls3 pl-2 pr-2 ">Video</span>
+                            <span class="float-right fs-13 ls3">
+                                <div class="mr-2 d-inline-block position-relative  " >
+                                    <i class="far fa-heart fs-18 tt tolltip-cnt cur-pointer" data-ttle="J'aime"></i>
+                                    <div class="position-absolute zit p-2 tolltip ls3 d-none "></div>
+                                </div><div class="d-inline-block  cur-pointer position-relative" data-toggle="tooltip" data-placement="bottom" title="ajouter à la playlist">
+                                    <div class=" btn-plst p-0"> <i class="fa fa-plus "></i></div>
+                                    <div class="position-absolute p-2 z-depth-1 white p-lst d-none cont-plst animated"  alb-sng="Le single" style="right:0px;">
+
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="a-play-cont position-relative d-inline-block">
+                            <div class="position-absolute tp-lf0 h-100 w-100 hov-elm"></div>
+                            <div class="content-mus weight-mus toile-content position-relative ovh" style="background-image: url({{ asset('kossa/img/sauce2.jpg') }})">
+                                <div class="position-absolute couv tp-lf0 h-100 w-100"></div>
+                                <div class="position-absolute tp-lf0 h-100 w-100 text-center">
+                                    <div class="position-relative time-play" style="top:100px">
+                                        <div class="text-center">
+                                            <a href="video.html" class="d-inline-block btn-in-img tt cur-pointer cl-n2 p-3 z-depth-1 mr-1"  data-toggle="tooltip" data-placement="top" title="Play"> <i class="fa fa-play "></i></a><a href="detsingle.html" class="d-inline-block btn-in-img tt cl-n2 p-3 ml-1 z-depth-1" data-toggle="tooltip" data-placement="top" title="Détails"> <i class="fa fa-ellipsis-h "></i></a>
+                                        </div>
+                                        <div class="text-center d-inline-block mt-2 pr-2 pl-2 ls3 black cl-b3 fs-13 cur-def">03:33</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-1 name-mus weight-mus"><span class="font-weight-bold name-art">Artista </span>- <span class="">Le piment dans la sauce</span></div>  
+                        </div>
+                    </div>
+                </div>
+                <div class="d-inline-block mb-3 ml-3" >
+                    <div class="weight-mus">
+                        <div class="mb-2">
+                            <span class=" float-left d-inline-block badge indigo ls3 pl-2 pr-2 ">Video</span>
+                            <span class="float-right fs-13 ls3">
+                                <div class="mr-2 d-inline-block position-relative  " >
+                                    <i class="far fa-heart fs-18 tt tolltip-cnt cur-pointer" data-ttle="J'aime"></i>
+                                    <div class="position-absolute zit p-2 tolltip ls3 d-none "></div>
+                                </div><div class="d-inline-block  cur-pointer position-relative" data-toggle="tooltip" data-placement="bottom" title="ajouter à la playlist">
+                                    <div class=" btn-plst p-0"> <i class="fa fa-plus "></i></div>
+                                    <div class="position-absolute p-2 z-depth-1 white p-lst d-none cont-plst animated"  alb-sng="Le single" style="right:0px;">
+
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="a-play-cont position-relative d-inline-block">
+                            <div class="position-absolute tp-lf0 h-100 w-100 hov-elm"></div>
+                            <div class="content-mus weight-mus toile-content position-relative ovh" style="background-image: url({{ asset('kossa/img/tenor2.jpg') }})">
+                                <div class="position-absolute couv tp-lf0 h-100 w-100"></div>
+                                <div class="position-absolute tp-lf0 h-100 w-100 text-center">
+                                    <div class="position-relative time-play" style="top:100px">
+                                        <div class="text-center">
+                                            <a href="video.html" class="d-inline-block btn-in-img tt cur-pointer cl-n2 p-3 z-depth-1 mr-1"  data-toggle="tooltip" data-placement="top" title="Play"> <i class="fa fa-play "></i></a><a href="detsingle.html" class="d-inline-block btn-in-img tt cl-n2 p-3 ml-1 z-depth-1" data-toggle="tooltip" data-placement="top" title="Détails"> <i class="fa fa-ellipsis-h "></i></a>
+                                        </div>
+                                        <div class="text-center d-inline-block mt-2 pr-2 pl-2 ls3 black cl-b3 fs-13 cur-def">03:33</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-1 name-mus weight-mus"><span class="font-weight-bold name-art">Tenor </span>- <span class="">Nfian le wey le yaamo</span></div>  
+                        </div>
+                    </div>
+                </div>
+                <div class="d-inline-block mb-3 ml-3" >
+                    <div class="weight-mus">
+                        <div class="mb-2">
+                            <span class=" float-left d-inline-block badge black ls3 pl-2 pr-2 ">Audio</span>
+                            <span class="float-right fs-13 ls3">
+                                <div class="mr-2 d-inline-block position-relative  " >
+                                    <i class="fas fa-heart fs-18 text-red tolltip-cnt cur-pointer" data-ttle="J'aime"></i>
+                                    <div class="position-absolute zit p-2 tolltip ls3 d-none "></div>
+                                </div><div class="d-inline-block  cur-pointer position-relative" data-toggle="tooltip" data-placement="bottom" title="ajouter à la playlist">
+                                    <div class=" btn-plst p-0"> <i class="fa fa-plus "></i></div>
+                                    <div class="position-absolute p-2 z-depth-1 white p-lst d-none cont-plst animated"  alb-sng="Le single" style="right:0px;">
+
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="a-play-cont position-relative d-inline-block">
+                            <div class="position-absolute tp-lf0 h-100 w-100 hov-elm"></div>
+                            <div class="content-mus weight-mus toile-content position-relative ovh" style="background-image: url({{ asset('kossa/img/locko1.jpg') }})">
+                                <div class="position-absolute couv tp-lf0 h-100 w-100"></div>
+                                <div class="position-absolute tp-lf0 h-100 w-100 text-center">
+                                    <div class="position-relative time-play" style="top:100px">
+                                        <div class="text-center">
+                                            <div class="d-inline-block btn-in-img tt cur-pointer bnt-plyay-mus cl-n2 p-3 z-depth-1 mr-1"  data-toggle="tooltip" data-placement="top" title="Play"> <i class="fa fa-play "></i></div><a href="detsingle.html" class="d-inline-block btn-in-img tt cl-n2 p-3 ml-1 z-depth-1" data-toggle="tooltip" data-placement="top" title="Détails"> <i class="fa fa-ellipsis-h "></i></a>
+                                        </div>
+                                        <div class="text-center d-inline-block mt-2 pr-2 pl-2 ls3 black cl-b3 fs-13 cur-def">03:33</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-1 name-mus weight-mus"><span class="font-weight-bold name-art">Locko </span>- <span class="">Une autre magie du name</span></div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="prev-mako position-absolute drt-sld white pl-3 pr-3 pt-1 pb-1 trs-03 d-inline-block cur-pointer z-depth-1" style="top:45%;left:0%">
+                <i class="fa fa-arrow-left fs-13 "></i>
+            </div>
+            <div class="next-mako position-absolute drt-sld white pl-3 pr-3 pt-1 pb-1 trs-03 d-inline-block cur-pointer z-depth-1" style="top:45%;right:0%">
+                <i class="fa fa-arrow-right fs-13 "></i>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+

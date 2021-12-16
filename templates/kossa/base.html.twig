@@ -1,0 +1,154 @@
+{% set locale = app.request.locale %}
+<html lang="{{ locale }}" prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="UTF-8" />
+        <meta property="og:locale" content="{{ locale }}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{% block section %}{% endblock %} | {% block title %}{% endblock %}</title>
+        <meta name="description" content="{% block description %}{% endblock %}"/>
+        <meta name="robots" content="noodp"/>
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="{% block ogtitle %}{% endblock %}" />
+        <meta property="og:description" content="{% block ogdescription %}{% endblock %}" />
+        <meta property="og:url" content="{% block ogurl %}{% endblock %}" />
+        <meta property="og:image" content="{% block ogimage %}{% endblock %}" />
+        <meta property="og:image:width" content="1920" />
+        <meta property="og:image:height" content="900" />
+        <meta property="og:site_name" content="KOSSA" />
+        <link rel="canonical" href="{{ path('homepage') }}" />
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="{{ asset('kossa/css/bootstrap.min.css') }}">
+        <!-- Material Design Bootstrap -->
+        <link rel="stylesheet" href="{{ asset('kossa/css/mdb.min.css') }}">
+        <!-- Your custom styles (optional) -->
+        <link rel="stylesheet" href="{{ asset('kossa/css/style.css') }}">
+        <!-- Your fonts awesome (optional) -->
+        <link href="{{ asset('kossa/css/formul.css') }}" rel="stylesheet">
+        <link href="{{ asset('kossa/css/style-news.css') }}" rel="stylesheet">
+        <link href="{{ asset('kossa/css/style-event.css') }}" rel="stylesheet">
+        <link href="{{ asset('kossa/css/style-play.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('kossa/css/all.css') }}">
+         <link rel="stylesheet" href="{{ asset('kossa/css/slick.css') }}">
+        <link rel="stylesheet" href="{{ asset('kossa/css/fontawesome.css') }}">
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+
+    <body >
+        {% block body %}
+
+            {% block header %}
+
+            {% endblock %}
+
+            {% block banner %}
+
+            {% endblock %}
+            
+             {% block body_content %}
+
+            {% endblock %}
+
+            <div class="container">
+                <div class="row ">
+                    <div class="col-md-2 mt-5 mb-5 p-md-1">
+                        {% block content_left_top %}
+
+                        {% endblock %}
+                        {% block content_left_middle %}
+
+                        {% endblock %}
+
+                    </div>
+                    <div class="col-md-7 mt-md-5 p-md-0">
+                        {% block content_body %}
+
+                        {% endblock %}
+                    </div>
+                    <div class="col-md-3 mt-1">
+                        {% block content_right_top %}
+
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="cont-all-plst">
+
+            </div>
+
+            <div class="lecteur z-depth-3 position-fixed white p-3 animated lecteur-out">
+                <div class="float-left lecteur-g h-100 position-relative lecteur-img ovh" style="background-image: url('img/enow4.jpg')">
+                    <div class="white position-absolute lecteur-g lecteur-couv h-100 rounded-pill" style="z-index: 301"></div>
+                </div>
+                <div class="d-inline-block lecteur-d h-100 pt-3">
+                    <div class="h5-responsive">#titre de la music</div>
+                    <div class="font-weight-bold cl-n2">stanlay enow</div>
+                    <div class="font-weight-bold fs-12 cl-r1">-02:20</div>
+                </div>
+                <div class="position-absolute cl-n2 pl-2 pr-2 roud-close pt-1 pb-1  bnt-close cur-pointer " style="top:0px; right:0px">
+                    <i class="fa fa-plus rot-90 fs-12"></i>
+                </div>
+                <div class="position-absolute" style="bottom:0px; right:10px">
+                    <div class="d-inline-block lct-btn p-2 cur-pointer"  data-toggle="tooltip" data-placement="top" title="précédent"><i class="fa fa-arrow-left fs-12"></i></div>
+                    <div class="d-inline-block lct-btn p-2 cur-pointer" data-toggle="tooltip" data-placement="top" title="play"><i class="fa fa-play fs-12"></i></div>
+                    <div class="d-inline-block lct-btn p-2 cur-pointer" data-toggle="tooltip" data-placement="top" title="suivant"><i class="fa fa-arrow-right fs-12"></i></div>
+                    <div class="d-inline-block lct-btn  cur-pointer position-relative" data-toggle="tooltip" data-placement="top" title="ajouter à la playlist">
+                        <div class=" btn-plst p-2"> <i class="fa fa-plus fs-12"></i></div>
+                        <div class="position-absolute p-2 z-depth-1 white p-lst d-none cont-plst animated"  alb-sng="Le single" style="right:0px;bottom:50px">
+
+                        </div>
+                    </div>
+                    <a href="detsingle.html" class="d-inline-block lct-btn p-2 cur-pointer tt" data-toggle="tooltip" data-placement="top" title="détail"><i class="fa fa-ellipsis-h fs-12"></i></a>
+                </div>
+            </div>
+            <div id="laplaylist" class="d-none">
+                <div class="mb-3 mt-1 fs-14 ls3 lst-nbr-plst cl-n1">
+                    <div class="elt-plst text-left pl-1 pt-2 pb-2 cur-pointer">Playlist-01</div>
+                    <div class="elt-plst text-left pl-1 pt-2 pb-2 cur-pointer">Playlist-02</div>
+                    <div class="elt-plst text-left pl-1 pt-2 pb-2 cur-pointer">Playlist-03</div>
+                </div>
+                <form action="">
+                    <input type="text" id="input-name" class="p-1" placeholder="Nouvelle playlist">
+                    <div class="mt-2">
+                        <button type="button" class="btn btn-purple btn-sm mr-0 ml-0 btn-block add-plst" > <i class="fa fa-plus mr-1"></i> ajouter</button>
+                    </div>
+                </form>
+            </div>
+            {% block ticket %}
+
+            {% endblock %}
+            {% block footer %}
+
+            {% endblock %}
+        {% endblock %}
+        <!-- /EndCode-->
+          <script>
+            locale = "{{locale}}";
+        </script>
+        <!-- JQuery -->
+        <script type="text/javascript" src="{{ asset('kossa/js/jquery-3.3.1.min.js') }}"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="{{ asset('kossa/js/popper.min.js') }}"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="{{ asset('kossa/js/bootstrap.min.js') }}"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="{{ asset('kossa/js/mdb.js') }}"></script>
+        <!-- Font awesome JavaScript -->
+        <script type="text/javascript" src="{{ asset('kossa/js/all.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('kossa/js/slick.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('kossa/js/fontawesome.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('kossa/js/custom.js') }}"></script>
+        
+        {{ encore_entry_script_tags('js/app') }}
+       
+        {#<script type="text/javascript" src="{{ asset('kossa/js/WecashUp/MobileMoney.js') }}"></script>   
+#}
+        {% block javascripts %}
+
+        {% endblock %}
+    </body>
+</html>

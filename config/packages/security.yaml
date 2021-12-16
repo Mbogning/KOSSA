@@ -1,0 +1,102 @@
+security:
+    
+    encoders:
+        # Our user class and the algorithm we'll use to encode passwords
+        # https://symfony.com/doc/current/security.html#c-encoding-the-user-s-password
+        App\Entity\Home\User: bcrypt
+
+    providers:
+        user_provider:
+            entity:
+                class: App\Entity\Home\User
+
+    # https://symfony.com/doc/current/security.html#initial-security-yml-setup-authentication
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+            
+        oauth_token:
+            pattern:    ^/oauth/v2/token
+            security:   false
+        oauth_authorize:
+            pattern:    ^/oauth/v2/auth
+            form_login:
+                provider: user_provider
+                check_path: /oauth/v2/auth_login_check
+                login_path: /oauth/v2/auth_login
+                use_referer: true
+        api:
+            pattern:    ^/(%app_locales%)/api
+            fos_oauth:  true
+            stateless:  true
+            anonymous:  false
+
+        main:
+            # this firewall applies to all URLs
+            pattern: ^/
+
+            # but the firewall does not require login on every page
+            # denying access is done in access_control or in your controllers
+            anonymous: true
+
+            # This allows the user to login by submitting a username and password
+            # Reference: https://symfony.com/doc/current/security/form_login_setup.html
+            form_login:
+                # The route name that the login form submits to
+                check_path: security_login
+                # The name of the route where the login form lives
+                # When the user tries to access a protected page, they are redirected here
+                login_path: security_login
+                # Secure the login form against CSRF
+                # Reference: https://symfony.com/doc/current/security/csrf_in_login_form.html
+                csrf_token_generator: security.csrf.token_manager
+                # The page users are redirect to when there is no previous page stored in the
+                # session (for example when the users access directly to the login page).
+                default_target_path: homepage
+
+            logout:
+                # The route name the user can go to in order to logout
+                path: security_logout
+                # The name of the route to redirect to after logging out
+                target: homepage
+
+    access_control:
+        # this is a catch-all for the admin area
+        # additional security lives in the controllers
+        - { path: '^/(%app_locales%)/admin', roles: ROLE_ARTIST }
+
+    role_hierarchy:
+        ROLE_ARTIST: 
+            - ROLE_USER
+            
+        ROLE_MUSICIEN: 
+            - ROLE_ARTIST
+            
+        ROLE_MUSICIEN_TALENT: 
+            - ROLE_ARTIST
+           
+        ROLE_PRODUCTEUR: 
+            - ROLE_ARTIST
+           
+        ROLE_ACTEUR: 
+            - ROLE_ARTIST
+            
+        ROLE_ADMIN_EVENT: 
+            - ROLE_ARTIST 
+        
+        ROLE_ADMIN_NEWS: 
+            - ROLE_ARTIST
+        
+        ROLE_ADMIN_PLAY: 
+            - ROLE_ARTIST 
+            
+        ROLE_ADMIN_MOVIE: 
+            - ROLE_ARTIST 
+            
+        ROLE_SUPER_ADMIN:       
+            - ROLE_ADMIN_NEWS
+            - ROLE_ADMIN_EVENT
+            - ROLE_ADMIN_PLAY
+            - ROLE_ADMIN_MOVIE
+            - ROLE_ALLOWED_TO_SWITCH

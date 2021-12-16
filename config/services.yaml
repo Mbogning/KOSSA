@@ -1,0 +1,196 @@
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: 'en'
+    # This parameter defines the codes of the locales (languages) enabled in the application
+    app_locales: en|fr
+    app.notifications.email_sender: noreply.kossa@gmail.com
+    sonata.media.provider.file.class: App\Application\Sonata\MediaBundle\Provider\FileExtensionProvider
+
+services:
+    
+    Sonata\MediaBundle\Twig\Extension\MediaExtension:
+        alias: sonata.media.twig.extension
+        public: true
+       
+    
+    FOS\OAuthServerBundle\Model\AccessTokenManagerInterface:
+        alias: fos_oauth_server.access_token_manager.default
+        public: true
+
+    FOS\OAuthServerBundle\Model\AuthCodeManagerInterface:
+        alias: fos_oauth_server.auth_code_manager.default
+        public: true
+
+    FOS\OAuthServerBundle\Model\ClientManagerInterface:
+        alias: fos_oauth_server.client_manager.default
+        public: true
+
+    FOS\OAuthServerBundle\Model\RefreshTokenManagerInterface:
+        alias: fos_oauth_server.refresh_token_manager.default
+        public: true
+        
+    sensio_framework_extra.view.listener:
+        alias: Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener
+        
+    kossa.file.manager:
+        class: App\Service\KossaFileManager
+        arguments: ["%kernel.project_dir%"]
+        public: true
+        
+    kossa.resizer:
+        class: App\Service\KossaResizer
+        arguments: ["@sonata.media.adapter.image.gd", 'outbound', "@sonata.media.metadata.proxy","%kernel.project_dir%"]
+  
+    kossa.resizer.square:
+        class: App\Service\KossaResizerSquare
+        arguments: ["@sonata.media.adapter.image.gd", 'outbound', "@sonata.media.metadata.proxy","%kernel.project_dir%"]
+  
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        bind:               # defines the scalar arguments once and apply them to any service defined/created in this file
+            $locales: '%app_locales%'
+            $defaultLocale: '%locale%'
+      
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/*'
+        exclude: '../src/{Entity,Migrations,Tests,Kernel.php,Application}'
+
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    App\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
+     
+
+    # when the service definition only contains arguments, you can omit the
+    # 'arguments' key and define the arguments just below the service class
+    App\EventSubscriber\CommentNotificationSubscriber:
+        $sender: '%app.notifications.email_sender%'
+        
+    App\EventSubscriber\TicketNotificationSubscriber:
+        $sender: '%app.notifications.email_sender%'
+        
+    App\EventSubscriber\SluggerSubscriber:
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
+            
+    App\EventSubscriber\SingleSubscriber:
+        arguments: ['@service_container']
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
+       
+    App\EventSubscriber\AccountSubscriber:
+        arguments: ['@service_container']
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
+       
+    admin.home.user_admin:
+        class: App\Admin\Home\UserAdminAdmin
+        arguments: [~, App\Entity\Home\User, App\Controller\Admin\Home\UserAdminAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Administrateurs }
+        public: true
+
+    admin.news.article:
+        class: App\Admin\News\ArticleAdmin
+        arguments: [~, App\Entity\News\Article, App\Controller\Admin\News\ArticleAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Article }
+        public: true
+
+    admin.play.genre_musical:
+        class: App\Admin\Play\GenreMusicalAdmin
+        arguments: [~, App\Entity\Play\GenreMusical, App\Controller\Admin\Play\GenreMusicalAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: GenreMusical }
+        public: true
+
+    admin.home.user_artiste:
+        class: App\Admin\Home\UserArtisteAdmin
+        arguments: [~, App\Entity\Home\User, App\Controller\Admin\Home\UserArtisteAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Artiste/Musicien/Producteur }
+        public: true
+
+    admin.home.media_unit:
+        class: App\Admin\Home\MediaUnitAdmin
+        arguments: [~, App\Entity\Home\MediaUnit, App\Controller\Admin\Home\MediaUnitAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: MediaUnit }
+        public: true
+
+    
+    admin.play.single:
+        class: App\Admin\Play\SingleAdmin
+        arguments: [~, App\Entity\Play\Single, App\Controller\Admin\Play\SingleAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Single }
+        public: true
+
+    admin.news.categorie_article:
+        class: App\Admin\News\CategorieArticleAdmin
+        arguments: [~, App\Entity\News\CategorieArticle, App\Controller\Admin\News\CategorieArticleAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: CategorieArticle }
+        public: true
+
+    admin.home.tag:
+        class: App\Admin\Home\TagAdmin
+        arguments: [~, App\Entity\Home\Tag, App\Controller\Admin\Home\TagAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Tag }
+        public: true
+
+    admin.play.type_musical:
+        class: App\Admin\Play\TypeMusicalAdmin
+        arguments: [~, App\Entity\Play\TypeMusical, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: TypeMusical }
+        public: true
+
+    admin.event.categorie_event:
+        class: App\Admin\Event\CategorieEventAdmin
+        arguments: [~, App\Entity\Event\CategorieEvent, App\Controller\Admin\Event\CategorieEventAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: CategorieEvent }
+        public: true
+
+    admin.event.concert:
+        class: App\Admin\Event\ConcertAdmin
+        arguments: [~, App\Entity\Event\Event, App\Controller\Admin\Event\ConcertAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Concert }
+        public: true
+
+    admin.event.festival:
+        class: App\Admin\Event\FestivalAdmin
+        arguments: [~, App\Entity\Event\Event, App\Controller\Admin\Event\FestivalAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Festival }
+        public: true
+
+    admin.event.showcase:
+        class: App\Admin\Event\ShowcaseAdmin
+        arguments: [~, App\Entity\Event\Event, App\Controller\Admin\Event\ShowcaseAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Showcase }
+        public: true
+
+    admin.event.award:
+        class: App\Admin\Event\AwardAdmin
+        arguments: [~, App\Entity\Event\Event, App\Controller\Admin\Event\AwardAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Award }
+        public: true
+
+    admin.event.ticket:
+        class: App\Admin\Event\TicketAdmin
+        arguments: [~, App\Entity\Event\Ticket, App\Controller\Admin\Event\TicketAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Ticket }
+        public: true

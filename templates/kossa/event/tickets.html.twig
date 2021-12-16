@@ -1,0 +1,58 @@
+{% extends 'kossa/event/base.html.twig' %}
+
+{% set locale = app.request.locale %}
+{% block section %}KOSSA EVENT {% endblock %}
+
+{% block title %}{{"Mes tickets"|trans }} {% endblock %}
+{% block description %}{{"Mes tickets"|trans }}{% endblock %}
+
+{% block ogtitle %}{{"KOSSA EVENT | Mes tickets"|trans }}{% endblock %}
+{% block ogdescription %}{{"Mes tickets"|trans }}{% endblock %}
+
+{% block ogurl %}{{ path('kossa_event_tickets') }}{% endblock %}
+{% block ogimage %}{{ asset('kossa.png') }}{% endblock %}
+
+{% block canonical %}{{ path('kossa_event_tickets') }}{% endblock %}
+
+{% block  content_body %}
+    <div class="h3-responsive font-weight-bold mt-1 float-md-left mb-4 mr-4">Tickets</div>
+    <div class="text-right mb-4">
+        <form class="t1-form form-search js-search-form position-relative" action="{{ path('kossa_event_tickets')}}" id="global-search">
+            <input class="search-input event-search" type="text" id="search-query" placeholder="Recherchez un ticket" name="queryticket" >
+            <span class="search-icon">
+                <a class="d-inline-block position-absolute" style="bottom:5px; right: 9px" >
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                </a>
+            </span>
+        </form>
+        <div class="">
+            <span class="btn position-relative btn-danger btn-sm p-1 pl-3 pr-3 font-weight-bold btn-cate">Catégories: <span class="chx-cate">#Tout</span>
+                <div class="position-absolute d-none btn-danger p-0 w-100 text-left lst-elm-cate z-depth-2 animated " style="top:99%; left:0px">
+                    {% for category in categories %}
+                        <a style="color: white"  href="{{ path('kossa_event_tickets', {'categoryticket': category.nom == app.request.query.get('categoryticket') ? null : category.nom}) }}"><div class="p-1 pl-3 pr-3 font-weight-bold fs-12 text-uppercase ls3 elm-cate">#{{category.nom}}</div></a>
+                    {% endfor %}
+                </div>
+            </span>
+
+        </div>
+    </div>
+    <div class="mb-4">
+        <div class="pl-4 pt-4 pr-4 pb-3 white toile-content ls3">
+            {% for ticket in tickets %}
+                <div class="position-relative d-inline-block mb-3 ml-2">
+                    <div class="weight-mus text-truncate font-weight-bold cur-def" ><a href="{{ path('kossa_event_event', {slug: ticket.ticket.event.slug}) }}" class="font-weight-bold  fs-12 btn-sm tt"> {{ticket.ticket.event.titre}}</a></div>  
+                    <div class="content-mus weight-mus toile-content position-relative ovh" style="background-image: url({% path ticket.ticket.event.photo, 'normal' %})">
+                        <div class="position-absolute tree h-100 w-100"></div>
+                        <div class="position-absolute text-left text-white fs-14" style="bottom:5px;left:5px">
+                            <div class="badge badge-light">{{ticket.ticket.event.categorieEvent.nom}}</div>
+                            <div><span class="badge badge-danger">{{ticket.nombre}}</span>  billets</div>
+                            <div><span class="badge badge-primary">{{ticket.prix}}</span> xaf</div>
+                        </div>
+                    </div> 
+                    <div class="text-center "><a href="#" class="text-center btn btn-outline-blue-grey font-weight-bold ls3 btn-sm">Imprimer</a></div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

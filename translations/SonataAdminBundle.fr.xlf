@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="W2_Nn4." resname="title_dashboard">
+        <source>title_dashboard</source>
+        <target>title_dashboard</target>
+      </trans-unit>
+      <trans-unit id="ftQG7bv" resname="confirm_exit">
+        <source>confirm_exit</source>
+        <target>confirm_exit</target>
+      </trans-unit>
+      <trans-unit id="wcIksDz" resname="Admin">
+        <source>Admin</source>
+        <target>Admin</target>
+      </trans-unit>
+      <trans-unit id="mR3GCZj" resname="noscript_warning">
+        <source>noscript_warning</source>
+        <target>noscript_warning</target>
+      </trans-unit>
+      <trans-unit id="y.N3O53" resname="search_placeholder">
+        <source>search_placeholder</source>
+        <target>search_placeholder</target>
+      </trans-unit>
+      <trans-unit id=".NYuTG5" resname="link_actions">
+        <source>link_actions</source>
+        <target>link_actions</target>
+      </trans-unit>
+      <trans-unit id="WPzArF9" resname="toggle_navigation">
+        <source>toggle_navigation</source>
+        <target>toggle_navigation</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,316 @@
+{#
+
+This file is part of the Sonata package.
+
+(c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+
+#}
+
+{% extends base_template %}
+
+{% block title %}{{ 'title_dashboard'|trans({}, 'SonataAdminBundle') }}{% endblock%}
+{% block breadcrumb %}{% endblock %}
+{% block content %}
+
+    <section class="content-header">
+        <h1>
+            Events
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="{{ path('sonata_admin_dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Event</li>
+        </ol>
+    </section>
+
+    <section class="content">
+        <!-- Info boxes -->
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+
+                    <div class="info-box-content">
+                        <h4> Showcase </h4>
+                        <span class="info-box-text"><strong>{{ awards|length }}</strong></span>
+                        <a href="{{ path('home_artiste_list') }}" class="small-box-footer">Plus D'informations</a>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+
+                    <div class="info-box-content">
+                        <h4> Award </h4>
+                        <span class="info-box-text"><strong>{{ awards|length }}</strong></span>
+                        <a href="{{ path('home_artiste_list') }}" class="small-box-footer">Plus D'informations</a>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+
+            <!-- fix for small devices only -->
+            <div class="clearfix visible-sm-block"></div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
+
+                    <div class="info-box-content">
+                        <h4> Concert </h4>
+                        <span class="info-box-text"><strong>{{ concert|length }}</strong></span>
+                        <a href="{{ path('home_artiste_list') }}" class="small-box-footer">Plus D'informations</a>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+
+                    <div class="info-box-content">
+                        <h4> Festival </h4>
+                        <span class="info-box-text"><strong>{{ festival|length }}</strong></span>
+                        <a href="{{ path('home_artiste_list') }}" class="small-box-footer">Plus D'informations</a>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+        </div>
+
+
+    </section>
+
+    <section class="content-header">
+        <h1>
+            News
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="{{ path('sonata_admin_dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">News</li>
+        </ol>
+    </section>
+
+    <section class="content">
+        <!-- Info boxes -->
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-blue-gradient"><i class="ion ion-ios-list-outline"></i></span>
+
+                    <div class="info-box-content">
+                        <h4> Actualite</h4>
+                        <span class="info-box-text"><strong>{{ actualite|length }}</strong></span>
+                        <a href="{{ path('home_artiste_list') }}" class="small-box-footer">Plus D'informations</a>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-purple-gradient"><i class="ion ion-ios-photos-outline"></i></span>
+                    <div class="info-box-content">
+                        <h4> Publication</h4>
+                        <span class="info-box-text"><strong>{{ publication_des_artistes|length }}</strong></span>
+                        <a href="{{ path('home_artiste_list') }}" class="small-box-footer">Plus D'informations</a>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+
+            <!-- fix for small devices only -->
+            <div class="clearfix visible-sm-block"></div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-green-gradient"><i class="ion ion-ios-telephone-outline"></i></span>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-red-active"><i class="ion ion-ios-tennisball-outline"></i></span>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+        </div>
+
+
+    </section>
+
+
+    <section class="content-header">
+        <h1>
+            Play
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="{{ path('sonata_admin_dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Play</li>
+        </ol>
+    </section>
+
+    <section class="content">
+        <!-- Info boxes -->
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+
+                    <div class="info-box-content">
+                        <h4> Showcase </h4>
+                        <span class="info-box-text"><strong>{{ awards|length }}</strong></span>
+                        <a href="{{ path('home_artiste_list') }}" class="small-box-footer">Plus D'informations</a>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+
+                    <div class="info-box-content">
+                        <h4> Award </h4>
+                        <span class="info-box-text"><strong>{{ awards|length }}</strong></span>
+                        <a href="{{ path('home_artiste_list') }}" class="small-box-footer">Plus D'informations</a>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+
+            <!-- fix for small devices only -->
+            <div class="clearfix visible-sm-block"></div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
+
+                    <div class="info-box-content">
+                        <h4> Concert </h4>
+                        <span class="info-box-text"><strong>{{ concert|length }}</strong></span>
+                        <a href="{{ path('home_artiste_list') }}" class="small-box-footer">Plus D'informations</a>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+
+                    <div class="info-box-content">
+                        <h4> Festival </h4>
+                        <span class="info-box-text"><strong>{{ festival|length }}</strong></span>
+                        <a href="{{ path('home_artiste_list') }}" class="small-box-footer">Plus D'informations</a>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+        </div>
+
+
+    </section>
+
+    <section class="content-header">
+        <h1>
+            Movie
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="{{ path('sonata_admin_dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Movie</li>
+        </ol>
+    </section>
+
+    <section class="content">
+        <!-- Info boxes -->
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+
+                    <div class="info-box-content">
+                        <h4> Showcase </h4>
+                        <span class="info-box-text"><strong>{{ awards|length }}</strong></span>
+                        <a href="{{ path('home_artiste_list') }}" class="small-box-footer">Plus D'informations</a>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+
+                    <div class="info-box-content">
+                        <h4> Award </h4>
+                        <span class="info-box-text"><strong>{{ awards|length }}</strong></span>
+                        <a href="{{ path('home_artiste_list') }}" class="small-box-footer">Plus D'informations</a>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+
+            <!-- fix for small devices only -->
+            <div class="clearfix visible-sm-block"></div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
+
+                    <div class="info-box-content">
+                        <h4> Concert </h4>
+                        <span class="info-box-text"><strong>{{ concert|length }}</strong></span>
+                        <a href="{{ path('home_artiste_list') }}" class="small-box-footer">Plus D'informations</a>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+
+                    <div class="info-box-content">
+                        <h4> Festival </h4>
+                        <span class="info-box-text"><strong>{{ festival|length }}</strong></span>
+                        <a href="{{ path('home_artiste_list') }}" class="small-box-footer">Plus D'informations</a>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+        </div>
+    </section> 
+
+{% endblock %}

@@ -1,0 +1,52 @@
+// webpack.config.js
+var Encore = require('@symfony/webpack-encore');
+
+Encore
+    // the project directory where all compiled assets will be stored
+    .setOutputPath('public/build/')
+    
+    //.enableTypeScriptLoader()
+
+    // the public path used by the web server to access the previous directory
+    .setPublicPath('/build')
+    
+    .enableReactPreset()
+
+    // will create public/build/app.js and public/build/app.css
+    .addEntry('js/app', './assets/js/app.js')
+   
+    // allow legacy applications to use $/jQuery as a global variable
+    .autoProvidejQuery()
+
+    // enable source maps during development
+    .enableSourceMaps(!Encore.isProduction())
+
+    // empty the outputPath dir before each build
+    .cleanupOutputBeforeBuild()
+
+    // show OS notifications when builds finish/fail
+    .enableBuildNotifications()
+    
+    //.enableVersioning(Encore.isProduction())
+
+    // create hashed filenames (e.g. app.abc123.css)
+    // .enableVersioning()
+
+    // allow sass/scss files to be processed
+    // .enableSassLoader()
+    
+    .disableSingleRuntimeChunk()
+    .enableIntegrityHashes()
+    .configureBabel(null, {
+        useBuiltIns: 'usage',
+        corejs: 3,
+    })
+    .splitEntryChunks()
+    .configureSplitChunks(function(splitChunks) {
+        splitChunks.maxSize = 300000;
+    })
+    
+;
+
+// export the final configuration
+module.exports = Encore.getWebpackConfig();

@@ -1,0 +1,26 @@
+{
+  "devDependencies": {
+    "@babel/preset-react": "^7.0.0",
+    "@symfony/webpack-encore": "^0.27.0",
+    "webpack": "^4.36.1",
+    "webpack-notifier": "^1.6.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.18",
+    "@fortawesome/free-solid-svg-icons": "^5.8.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "axios": "^0.18.0",
+    "i18next": "^15.1.3",
+    "i18next-browser-languagedetector": "^3.0.1",
+    "jquery": "^3.4.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-i18next": "^10.11.0",
+    "react-infinite-scroller": "^1.2.4",
+    "react-render-html": "^0.6.0",
+    "react-router-dom": "^5.0.0",
+    "react-timeago": "^4.4.0",
+    "react-truncate-html": "^0.1.7"
+  }
+}

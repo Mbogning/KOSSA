@@ -1,0 +1,96 @@
+{% extends 'kossa/event/base.html.twig' %}
+
+{% set locale = app.request.locale %}
+{% block section %}KOSSA EVENT {% endblock %}
+
+{% block title %}{{event.titre}} {% endblock %}
+{% block description %}{{event.content|raw}}{% endblock %}
+
+{% block ogtitle %} KOSSA EVENT | {{event.titre}}{% endblock %}
+{% block ogdescription %}{{event.content|raw}}{% endblock %}
+
+{% block ogurl %}{{ path('kossa_event_event', {slug: event.slug}) }}{% endblock %}
+{% block ogimage %}{% path event.photo, 'normal' %}{% endblock %}
+
+{% block canonical %}{{ path('kossa_event_event', {slug: event.slug}) }}{% endblock %}
+
+{% block  content_body %}
+    
+   
+    
+    {% if app.user %}
+        {% set userId=app.user.id %}
+    {% else %}
+        {% set userId=0 %}
+    {% endif %}
+
+    {% if event.tickets|length >0 %}
+        <div class="text-left ">
+            <div id="kossa_event_ticket_achat">
+                Chargement des tickets
+            </div>
+        </div>
+    {% endif %}
+
+    {% if event.categorieAwards|length >0 %}
+        <div class=""><span class="h4-responsive ls3  font-weight-bold  pt-2 cl-n1 pb-2 pr-4">{{event.titre}}</span></div>
+        <div class="mb-3 text-muted">{% if event.dateFin!=null %}
+            Du {{ event.dateDebut|localizeddate('medium', 'none', locale) }} au {{ event.dateFin|localizeddate('medium', 'none', locale) }}
+        {% else%}
+            Le {{ event.dateDebut|localizeddate('medium', 'none', locale) }}
+        {% endif%}
+    </div>
+    <div class="mb-2">
+        <div id="kossa_event_award_categorie">
+            Chargement des nominés
+        </div>
+    </div> 
+    <div class="pt-4 pl-4 pr-4 pb-2 white toile-content  mb-2 ls3">
+        <div id="kossa_event_event_appreciation"></div>
+        <div style="color: black;font-size: medium;font-family: Arial" class="pb-2">
+            {{event.content|raw}}
+        </div>
+    </div>
+    {% else %}
+        <div class="mb-4 mt-1">
+            <div class="actu-news-img position-relative brd-bt-event brd-tp-event" style="background-image: url({% path event.photo, 'normal' %});">
+                <div class=" lct-event trs-03 position-absolute h-100 w-100"></div>
+                <div class="h5-responsive pl-3 ls3 position-absolute text-white" style="top:15px;left:10px">
+                    {{event.titre}}
+                </div>
+                <div class="h6-responsive ls3 position-absolute font-weight-bold white z-depth-2 pt-2 cl-n1 pb-2 pl-4 pr-4" style="bottom:20px;right:30px">
+                    {% if event.dateFin!=null %}
+                        Du {{ event.dateDebut|localizeddate('medium', 'none', locale) }} au {{ event.dateFin|localizeddate('medium', 'none', locale) }}
+                    {% else%}
+                        Le {{ event.dateDebut|localizeddate('medium', 'none', locale) }}
+                    {% endif%}
+                </div>
+            </div>
+            <div class="pt-4 pl-4 pr-4 pb-2 white toile-content  mb-2 ls3">
+                <div id="kossa_event_event_appreciation"></div>
+                <div style="color: black;font-size: medium;font-family: Arial" class="pb-2">
+                    {{event.content|raw}}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+            {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+                <div className="pl-4 pt-4 pr-4 pb-3 white toile-content mb-4">
+                    <p>
+                        <a class="btn btn-event" href="{{ path('security_login', {'redirect_to': app.request.pathInfo}) }}">
+                            <i class="fa fa-sign-language fs-20" aria-hidden="true"></i> {{ 'Connectez-vous'|trans }}
+                        </a>
+                        {{ 'pour publier un commentaire'|trans }}
+                    </p> 
+                </div>
+
+            {% endif %}
+            <div id="kossa_event_event_comment"></div>
+            <script>
+                eventEventId = {{event.id}};
+                        locale = "{{locale}}";
+                        login = {{login}};
+                        userId = {{userId}};
+            </script>
+            {% endblock %}

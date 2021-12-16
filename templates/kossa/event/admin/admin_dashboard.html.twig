@@ -1,0 +1,84 @@
+{% extends 'bundles/SonataAdminBundle/standard_layout.html.twig' %}
+
+{#
+
+This file is part of the Sonata package.
+
+(c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+
+#}
+
+{% block title %}{{ 'title_dashboard'|trans({}, 'SonataAdminBundle') }}{% endblock%}
+{% block breadcrumb %}{% endblock %}
+{% block content %}
+
+    <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+                
+              <h3>Concert</h3>
+
+              <h4>{{ concert|length }}</h4>
+              
+            </div>
+            <div class="icon">
+              <i class="ion ion-pie-graph"></i>
+            </div>
+            <a href="{{ path('home_artiste_list') }}" class="small-box-footer">Plus D'informations <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+          
+     <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <h3>Award</h3>
+
+              <h4>{{ awards|length }}</h4>
+            </div>
+            <div class="icon">
+              <i class="ion ion-pie-graph"></i>
+            </div>
+            <a href="{{ path('home_artiste_list') }}" class="small-box-footer">Plus D'informations <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+          
+   <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+                
+               <h3>Festival</h3>
+
+              <h4>{{ festival|length }}</h4>
+              
+            </div>
+            <div class="icon">
+              <i class="ion ion-pie-graph"></i>
+            </div>
+            <a href="{{ path('home_artiste_list') }}" class="small-box-footer">Plus D'informations <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+            
+             <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-blue">
+            <div class="inner">
+                
+              <h3>Showcase</h3>
+
+              <h4>{{ showcase|length }}</h4>
+              
+            </div>
+            <div class="icon">
+              <i class="ion ion-pie-graph"></i>
+            </div>
+            <a href="{{ path('home_artiste_list') }}" class="small-box-footer">Plus D'informations <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+           
+{% endblock %}

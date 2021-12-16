@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="V2touFG" resname="notification.ticket_created.description">
+        <source>notification.ticket_created.description</source>
+        <target><![CDATA[Vous avec %title% a reçu un nouveau commentaire. Vous pouvez lire le commentaire en suivant <a href="%link%">ce lien</a>]]></target>
+      </trans-unit>
+      <trans-unit id="Y5pA6Cu" resname="Connection">
+        <source>Connection</source>
+        <target>Connection</target>
+      </trans-unit>
+      <trans-unit id="A.AZanG" resname="Connectez vous sur Kossa">
+        <source>Connectez vous sur Kossa</source>
+        <target>Connectez vous sur Kossa</target>
+      </trans-unit>
+      <trans-unit id="8AHz97b" resname="Connection sur Kossa">
+        <source>Connection sur Kossa</source>
+        <target>Connection sur Kossa</target>
+      </trans-unit>
+      <trans-unit id="aLTr9IE" resname="Addrese email">
+        <source>Addrese email</source>
+        <target>Addrese email</target>
+      </trans-unit>
+      <trans-unit id=".5yLjAZ" resname="Mot de passe">
+        <source>Mot de passe</source>
+        <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="xDb5n.5" resname="S'enregistrer">
+        <source>S'enregistrer</source>
+        <target>S'enregistrer</target>
+      </trans-unit>
+      <trans-unit id="iQ3HCzw" resname="Enregistrez vous gratuitement sur Kossa">
+        <source>Enregistrez vous gratuitement sur Kossa</source>
+        <target>Enregistrez vous gratuitement sur Kossa</target>
+      </trans-unit>
+      <trans-unit id="EVQpdAu" resname="S'enregistrer sur Kossa">
+        <source>S'enregistrer sur Kossa</source>
+        <target>S'enregistrer sur Kossa</target>
+      </trans-unit>
+      <trans-unit id="qiy65Dy" resname="Genres musicaux">
+        <source>Genres musicaux</source>
+        <target>Genres musicaux</target>
+      </trans-unit>
+      <trans-unit id="COe.0TR" resname="Choisissez votre genre musical">
+        <source>Choisissez votre genre musical</source>
+        <target>Choisissez votre genre musical</target>
+      </trans-unit>
+      <trans-unit id="yr90_2E" resname="KOSSA NEWS | Genres musicaux">
+        <source>KOSSA NEWS | Genres musicaux</source>
+        <target>KOSSA NEWS | Genres musicaux</target>
+      </trans-unit>
+      <trans-unit id="kljm8Fx" resname="Connectez-vous">
+        <source>Connectez-vous</source>
+        <target>Connectez-vous</target>
+      </trans-unit>
+      <trans-unit id="58RhaxB" resname="pour publier un commentaire">
+        <source>pour publier un commentaire</source>
+        <target>pour publier un commentaire</target>
+      </trans-unit>
+      <trans-unit id="YSHyAf3" resname="Bienvenue">
+        <source>Bienvenue</source>
+        <target>Bienvenue</target>
+      </trans-unit>
+      <trans-unit id="aNr4tfc" resname="Soyez au taquet tous les évènements">
+        <source>Soyez au taquet tous les évènements</source>
+        <target>Soyez au taquet tous les évènements</target>
+      </trans-unit>
+      <trans-unit id="8ZG2FOd" resname="KOSSA EVENT">
+        <source>KOSSA EVENT</source>
+        <target>KOSSA EVENT</target>
+      </trans-unit>
+      <trans-unit id="q6dOIId" resname="Tenez vous informés des actualités sur le showbiz camerounais &#10;partout dans le monde">
+        <source>Tenez vous informés des actualités sur le showbiz camerounais 
+partout dans le monde</source>
+        <target>Tenez vous informés des actualités sur le showbiz camerounais 
+partout dans le monde</target>
+      </trans-unit>
+      <trans-unit id="VO6MS3O" resname="KOSSA NEWS">
+        <source>KOSSA NEWS</source>
+        <target>KOSSA NEWS</target>
+      </trans-unit>
+      <trans-unit id="8kHanx1" resname="Découvrez toute la diversité de la culture musicale camerounaise.">
+        <source>Découvrez toute la diversité de la culture musicale camerounaise.</source>
+        <target>Découvrez toute la diversité de la culture musicale camerounaise.</target>
+      </trans-unit>
+      <trans-unit id="7_03WeX" resname="Plateforme de musique camerounaise">
+        <source>Plateforme de musique camerounaise</source>
+        <target>Plateforme de musique camerounaise</target>
+      </trans-unit>
+      <trans-unit id="qVhkR6Y" resname="Venez vibrer sur les mélodies des plus belles chansons camerounaises &#10;de tout genre">
+        <source>Venez vibrer sur les mélodies des plus belles chansons camerounaises 
+de tout genre</source>
+        <target>Venez vibrer sur les mélodies des plus belles chansons camerounaises 
+de tout genre</target>
+      </trans-unit>
+      <trans-unit id="gvkWLCE" resname="KOSSA PLAY">
+        <source>KOSSA PLAY</source>
+        <target>KOSSA PLAY</target>
+      </trans-unit>
+      <trans-unit id="rrU0GR8" resname="title.change_password">
+        <source>title.change_password</source>
+        <target>title.change_password</target>
+      </trans-unit>
+      <trans-unit id="wtG.cxy" resname="info.change_password">
+        <source>info.change_password</source>
+        <target>info.change_password</target>
+      </trans-unit>
+      <trans-unit id="HLtdhYw" resname="action.save">
+        <source>action.save</source>
+        <target>action.save</target>
+      </trans-unit>
+      <trans-unit id="etGJjTo" resname="action.edit_user">
+        <source>action.edit_user</source>
+        <target>action.edit_user</target>
+      </trans-unit>
+      <trans-unit id="1sstKF9" resname="title.edit_user">
+        <source>title.edit_user</source>
+        <target>title.edit_user</target>
+      </trans-unit>
+      <trans-unit id="CX_oSFd" resname="action.change_password">
+        <source>action.change_password</source>
+        <target>action.change_password</target>
+      </trans-unit>
+      <trans-unit id="DF34uM2" resname="http_error.name">
+        <source>http_error.name</source>
+        <target>http_error.name</target>
+      </trans-unit>
+      <trans-unit id="_W1eNz2" resname="http_error_404.description">
+        <source>http_error_404.description</source>
+        <target>http_error_404.description</target>
+      </trans-unit>
+      <trans-unit id="MWNS5dg" resname="http_error_404.suggestion">
+        <source>http_error_404.suggestion</source>
+        <target>http_error_404.suggestion</target>
+      </trans-unit>
+      <trans-unit id="ZYXSW95" resname="http_error_500.description">
+        <source>http_error_500.description</source>
+        <target>http_error_500.description</target>
+      </trans-unit>
+      <trans-unit id="VVs_J1c" resname="http_error_500.suggestion">
+        <source>http_error_500.suggestion</source>
+        <target>http_error_500.suggestion</target>
+      </trans-unit>
+      <trans-unit id="e3w.2Rf" resname="http_error.description">
+        <source>http_error.description</source>
+        <target>http_error.description</target>
+      </trans-unit>
+      <trans-unit id="ru5FEGk" resname="http_error.suggestion">
+        <source>http_error.suggestion</source>
+        <target>http_error.suggestion</target>
+      </trans-unit>
+      <trans-unit id="Qn5rwdU" resname="http_error_403.description">
+        <source>http_error_403.description</source>
+        <target>http_error_403.description</target>
+      </trans-unit>
+      <trans-unit id="zDeeh7L" resname="http_error_403.suggestion">
+        <source>http_error_403.suggestion</source>
+        <target>http_error_403.suggestion</target>
+      </trans-unit>
+      <trans-unit id="5CKnexb" resname="Mes tickets">
+        <source>Mes tickets</source>
+        <target>Mes tickets</target>
+      </trans-unit>
+      <trans-unit id="cp7j0CV" resname="KOSSA EVENT | Mes tickets">
+        <source>KOSSA EVENT | Mes tickets</source>
+        <target>KOSSA EVENT | Mes tickets</target>
+      </trans-unit>
+      <trans-unit id="dIQm0DQ" resname="Concerts">
+        <source>Concerts</source>
+        <target>Concerts</target>
+      </trans-unit>
+      <trans-unit id="CFcpDhl" resname="Soyez au taquet tous les concerts">
+        <source>Soyez au taquet tous les concerts</source>
+        <target>Soyez au taquet tous les concerts</target>
+      </trans-unit>
+      <trans-unit id="lqGItC_" resname="KOSSA EVENT | Concerts">
+        <source>KOSSA EVENT | Concerts</source>
+        <target>KOSSA EVENT | Concerts</target>
+      </trans-unit>
+      <trans-unit id="WQwhSlQ" resname="Festival">
+        <source>Festival</source>
+        <target>Festival</target>
+      </trans-unit>
+      <trans-unit id="1yFatlQ" resname="Soyez au taquet tous les festivals">
+        <source>Soyez au taquet tous les festivals</source>
+        <target>Soyez au taquet tous les festivals</target>
+      </trans-unit>
+      <trans-unit id="6WkdIaT" resname="KOSSA EVENT | Festivals">
+        <source>KOSSA EVENT | Festivals</source>
+        <target>KOSSA EVENT | Festivals</target>
+      </trans-unit>
+      <trans-unit id="J1KSn9G" resname="Showcases">
+        <source>Showcases</source>
+        <target>Showcases</target>
+      </trans-unit>
+      <trans-unit id="5QOtKeE" resname="Soyez au taquet tous les showcases">
+        <source>Soyez au taquet tous les showcases</source>
+        <target>Soyez au taquet tous les showcases</target>
+      </trans-unit>
+      <trans-unit id="tBkUukU" resname="KOSSA EVENT | Showcases">
+        <source>KOSSA EVENT | Showcases</source>
+        <target>KOSSA EVENT | Showcases</target>
+      </trans-unit>
+      <trans-unit id="ZppGE41" resname="Awards">
+        <source>Awards</source>
+        <target>Awards</target>
+      </trans-unit>
+      <trans-unit id="M.Q.tvR" resname="Soyez au taquet tous les awards">
+        <source>Soyez au taquet tous les awards</source>
+        <target>Soyez au taquet tous les awards</target>
+      </trans-unit>
+      <trans-unit id="vfqdyHY" resname="KOSSA EVENT | Awards">
+        <source>KOSSA EVENT | Awards</source>
+        <target>KOSSA EVENT | Awards</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

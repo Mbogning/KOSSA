@@ -1,0 +1,102 @@
+sonata_admin:
+    assets:
+        extra_javascripts:
+            # ...
+            #- bundles/fosckeditor/ckeditor.js
+            - ckeditor/ckeditor.js
+            - bundles/sonataformatter/vendor/markitup-markitup/markitup/jquery.markitup.js
+            - bundles/sonataformatter/markitup/sets/markdown/set.js
+            - bundles/sonataformatter/markitup/sets/html/set.js
+            - bundles/sonataformatter/markitup/sets/textile/set.js
+
+        extra_stylesheets:
+            # ...
+            - bundles/sonataformatter/markitup/skins/sonata/style.css
+            - bundles/sonataformatter/markitup/sets/markdown/style.css
+            - bundles/sonataformatter/markitup/sets/html/style.css
+            - bundles/sonataformatter/markitup/sets/textile/style.css
+            
+    title: 'KOSSA'
+    title_logo: apple-touch-icon.png
+    dashboard:
+        blocks:
+            - { type: sonata.admin.block.admin_list, position: left }
+        
+        groups:
+            app.admin.group.conig:
+                label: "Config"
+                label_catalogue: App
+                icon: '<i class="fa fa-home"></i>'
+                items:
+                    - admin.home.user_admin
+                    
+                roles: [ROLE_SUPER_ADMIN] 
+               
+            app.admin.group.home:
+                label: "Home"
+                label_catalogue: App
+                icon: '<i class="fa  fa-newspaper-o"></i>'
+                items:
+                    - route: admin_news_dashboard
+                      label: Dashboard
+                      roles: [ROLE_SUPER_ADMIN]
+                    - admin.home.user_artiste
+                roles: [ROLE_ADMIN,ROLE_ADMIN_PLAY]
+                
+            app.admin.group.news:
+                label: "News"
+                label_catalogue: App
+                icon: '<i class="fa  fa-newspaper-o"></i>'
+                items:
+                    - route: admin_news_dashboard
+                      label: Dashboard
+                      roles: [ROLE_ADMIN_NEWS]
+                    - admin.news.categorie_article
+                    - admin.news.article
+                   
+                    
+                roles: [ROLE_ADMIN_NEWS]
+                
+            app.admin.group.play:
+                label: "Play"
+                label_catalogue: App
+                icon: '<i class="fa fa-music"></i>'
+                items:
+                    - route: admin_news_dashboard
+                      label: Dashboard
+                      roles: [ROLE_ADMIN_PLAY]
+                    - admin.play.genre_musical
+                    - admin.play.single
+                    - admin.play.type_musical
+                roles: [ROLE_ADMIN_PLAY]
+                
+            app.admin.group.event:
+                label: "Event"
+                label_catalogue: App
+                icon: '<i class="fa fa-hand-peace-o"></i>'
+                items:
+                    - route: admin_news_dashboard
+                      label: Dashboard
+                      roles: [ROLE_ADMIN_EVENT]
+                    - admin.event.categorie_event
+                    - admin.event.concert
+                    - admin.event.festival
+                    - admin.event.showcase
+                    - admin.event.award
+                roles: [ROLE_ADMIN_EVENT]
+                
+            app.admin.group.movie:
+                label: "Movie"
+                label_catalogue: App
+                icon: '<i class="fa fa-film"></i>'
+                items:
+                    - route: admin_news_dashboard
+                      label: Dashboard
+                      roles: [ROLE_ADMIN_MOVIE]
+                     
+                roles: [ROLE_ADMIN_MOVIE]
+            
+sonata_block:
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts: [admin]

@@ -1,0 +1,4 @@
+# See https://symfony.com/doc/current/email/dev_environment.html
+swiftmailer:
+    disable_delivery: false
+    #delivery_addresses: ['williammekomou@gmail.com']
