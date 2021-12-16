@@ -23,7 +23,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * @Route("/news")
- * @author William MEKOMOU <williammekomou@gmail.com>
+ * @author Junior MBOGNING <juniormbogning@gmail.com>
  */
 class NewsController extends AbstractFOSRestController {
 

@@ -19,7 +19,7 @@ use FOS\RestBundle\Controller\Annotations as Rest;
 
 /**
  * @Route("/api/news", name="api_news")
- * @author William MEKOMOU <williammekomou@gmail.com>
+ * @author @author Junior MBOGNING <juniormbogning@gmail.com>
  */
 class RestNewsController extends AbstractFOSRestController {
 

@@ -45,7 +45,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * @Route("/event")
- * @author William MEKOMOU <williammekomou@gmail.com>
+ * @author Junior MBOGNING <juniormbogning@gmail.com>
  */
 class EventController extends AbstractFOSRestController {
 
